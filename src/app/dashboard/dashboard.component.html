@@ -1,0 +1,19 @@
+<section class="dashboard" [class.whale-alert]="isRich()">
+  <header class="dashboard-header">
+    <h1 class="total-wealth">
+      {{ totalPortfolio() | currency: 'EUR':'symbol':'1.2-2' }}
+    </h1>
+    <button class="simulate-button" type="button" (click)="simulateMarket()">
+      Simuler Marché
+    </button>
+  </header>
+
+  <div class="card-grid">
+    @for (coin of coins(); track coin.id) {
+      <app-crypto-card
+        [coin]="cryptoService.getCoinSignal(coin.id)"
+        [updateQuantity]="createQuantityUpdater(coin.id)"
+      ></app-crypto-card>
+    }
+  </div>
+</section>

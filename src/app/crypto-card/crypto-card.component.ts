@@ -1,10 +1,10 @@
 import { Component, Input, Signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { Coin } from './crypto.model';
+import { Coin } from '../crypto.model';
 
 @Component({
-  selector: 'tr[app-crypto-card]',
+  selector: 'app-crypto-card',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './crypto-card.component.html',
