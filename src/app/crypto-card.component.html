@@ -1,0 +1,9 @@
+<td class="name">{{ coin().name | uppercase }}</td>
+<td>{{ coin().price | currency: 'USD':'symbol':'1.2-2' }}</td>
+<td>{{ coin().change24h | percent: '1.2-2' }}</td>
+<td>{{ coin().quantity | number: '1.0-4' }}</td>
+<td>{{ coin().lastUpdate | date: 'mediumTime' }}</td>
+<td class="actions">
+  <button type="button" class="action buy" (click)="updateQuantity(1)">Acheter</button>
+  <button type="button" class="action sell" (click)="updateQuantity(-1)">Vendre</button>
+</td>
