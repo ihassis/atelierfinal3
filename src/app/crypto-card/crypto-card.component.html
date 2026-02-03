@@ -1,0 +1,33 @@
+<article class="card">
+  <h3 class="card-title">{{ coin().name | uppercase }}</h3>
+
+  <div class="stats">
+    <div class="stat">
+      <span class="label">Prix</span>
+      <span class="value">{{ coin().price | currency: 'USD':'symbol':'1.2-2' }}</span>
+    </div>
+    <div class="stat">
+      <span class="label">Variation 24h</span>
+      <span
+        class="value"
+        [class.positive]="coin().change24h >= 0"
+        [class.negative]="coin().change24h < 0"
+      >
+        {{ coin().change24h | percent: '1.2-2' }}
+      </span>
+    </div>
+    <div class="stat">
+      <span class="label">Quantité</span>
+      <span class="value">{{ coin().quantity | number: '1.0-4' }}</span>
+    </div>
+    <div class="stat">
+      <span class="label">Dernière MAJ</span>
+      <span class="value">{{ coin().lastUpdate | date: 'shortTime' }}</span>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button type="button" class="action buy" (click)="updateQuantity(1)">Acheter</button>
+    <button type="button" class="action sell" (click)="updateQuantity(-1)">Vendre</button>
+  </div>
+</article>

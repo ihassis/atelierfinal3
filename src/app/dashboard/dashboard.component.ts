@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CryptoCardComponent } from './crypto-card.component';
-import { CryptoService } from './crypto.service';
+import { CryptoCardComponent } from '../crypto-card/crypto-card.component';
+import { CryptoService } from '../crypto.service';
 
 @Component({
   selector: 'app-dashboard',
